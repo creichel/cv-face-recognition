@@ -24,8 +24,10 @@
 #######################################################
 
 # IMPORTS
+import os
 import numpy as np
 import cv2 as cv
+from modules.face_extractor import face_extractor
 
 # Get camera image.
 camera = cv.VideoCapture(0)
@@ -41,14 +43,14 @@ while output and cv.waitKey(1) == -1:
     grayscale_image = cv.cvtColor(camera_image, cv.COLOR_BGR2GRAY)
 
     # Detect keypoints with SURF.
-    sift = cv.xfeatures2d.SURF_create(4000)
-    kp, des = sift.detectAndCompute(grayscale_image,None)
+    detector = cv.xfeatures2d.SURF_create(4000)
+    kp, des = detector.detectAndCompute(grayscale_image,None)
 
     # Draw the found keypoints onto the image.
     camera_image = cv.drawKeypoints(grayscale_image, kp, camera_image, flags = cv.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
 
     # Show the result.
-    cv.imshow('Face Detector (with SIFT)', camera_image)
+    cv.imshow('Face Detector (with SURF)', camera_image)
 
     # Grab next camera image.
     output, camera_image = camera.read()
