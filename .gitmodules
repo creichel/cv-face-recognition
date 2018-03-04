@@ -1,3 +1,6 @@
 [submodule "modules/face_extractor"]
 	path = modules/face_extractor
 	url = https://github.com/n1g1r1/cv-face-extractor.git
+[submodule "modules/online_identifier"]
+	path = modules/online_identifier
+	url = https://github.com/n1g1r1/cv-online-identifier-quving.git

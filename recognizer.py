@@ -26,7 +26,7 @@ import os               # path finding.
 import cv2 as cv        # webcam image.
 import time             # sleep time.
 
-import online_identifier as identifier
+from modules.online_identifier import online_identifier as identifier
 import faceUI as ui
 from modules.face_extractor import face_extractor
 
