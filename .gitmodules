@@ -4,3 +4,6 @@
 [submodule "modules/online_identifier"]
 	path = modules/online_identifier
 	url = https://github.com/n1g1r1/cv-online-identifier-quving.git
+[submodule "modules/face_detector"]
+	path = modules/face_detector
+	url = https://github.com/n1g1r1/cv-module-face-detector
