@@ -1,0 +1,35 @@
+# Face detection and
+general:
+    face_classifier:    'haar' # Choose: lbp, haar
+    recognizer:         'lbp' # Choose: lbp, eigen, fisher
+    identifier_method:  'offline' # Choose: online or offline.
+    capture_faces:      True
+    train_model:        True
+    classify:           True
+    resize_factor:    0.5
+
+# Training
+training:
+    set_path:         'data/training'
+    number_of_images: 20
+    resize:           False
+    model_path:       'model'
+    model_filename:   'LBPHData.xml'
+
+# Validation
+validation:
+    make_set:         False
+    set_path:         'data/validation'
+    number_of_images: 20
+
+# Test set
+test:
+    make_set:         True
+    set_path:         'data/test'
+
+# Server configuration for classification
+server:
+    url:              '' # Trailing slash
+    classify:         ''
+    train:            ''
+    update:           ''

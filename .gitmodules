@@ -1,9 +1,12 @@
-[submodule "modules/face_extractor"]
-	path = modules/face_extractor
-	url = https://github.com/n1g1r1/cv-face-extractor.git
-[submodule "modules/online_identifier"]
-	path = modules/online_identifier
-	url = https://github.com/n1g1r1/cv-online-identifier-quving.git
-[submodule "modules/face_detector"]
-	path = modules/face_detector
+[submodule "modules/trainer"]
+	path = modules/trainer
+	url = https://github.com/n1g1r1/cv-module-face-trainer
+[submodule "modules/classifier"]
+	path = modules/classifier
+	url = https://github.com/n1g1r1/cv-module-face-classifier
+[submodule "modules/detector"]
+	path = modules/detector
 	url = https://github.com/n1g1r1/cv-module-face-detector
+[submodule "modules/classifier_online"]
+	path = modules/classifier_online
+	url = https://github.com/n1g1r1/cv-module-face-classifier-online
