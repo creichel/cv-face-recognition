@@ -83,18 +83,18 @@ server:
     update:           ''
 ```
 
-To detect faces in general, you can choose between two classifiers:
+To detect faces in general, you can choose between two classifiers at `face_classifier`:
 
 - `lbp` [Local Binarization Pattern Histogram ](https://www.docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html#local-binary-patterns-histograms)
 - `haar` [Haar Cascades](https://docs.opencv.org/trunk/d7/d8b/tutorial_py_face_detection.html)
 
-To train and recognize the algorithm locally, you can choose between those three options in the `config.yml`:
+To train and recognize the algorithm locally, you can choose between those three options at `recognizer`:
 
 - `lbp` [Local Binarization Pattern Histogram ](https://www.docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html#local-binary-patterns-histograms)
 - `eigen` [Eigenfaces](https://www.docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html#eigenfaces)
 - `fisher` [Fisherfaces](https://www.docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html#fisherfaces)
 
-You can even have your own remote recognizer that returns a JSON formatted label and confidence value. If so, fill in an `url` to the server, as well as the paths to the `classify`, `train` and `update` API interface in the `server` section in `config.yml`. For example, you might have the server address `http://recognize.faceidentifier.io`, so you might fill in the section like the following:
+You can even have your own remote recognizer that returns a JSON formatted label and confidence value. If so, fill in an `url` to the server, as well as the paths to the `classify`, `train` and `update` API interface in the `server` section. For example, you might have the server address `http://recognize.faceidentifier.io`, so you might fill in the section like the following:
 
 ```yaml
 # Server configuration for classification
