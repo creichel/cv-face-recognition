@@ -9,7 +9,7 @@ from modules.detector import detector
 from modules.trainer import trainer
 from modules.classifier import classifier
 from modules.classifier_online import classifier as classifier_online
-from modules.ui import ui
+import ui
 
 # Config file setting. Default: 'config.yml'.
 config_file = 'config.yml'
@@ -84,7 +84,7 @@ def recognize():
         recognizer = cv.face.FisherFaceRecognizer_create()
 
     # Recognizer is not needed if online is chosen or the user only wants to capture faces.
-    elif identifier_method != 'online' and (train_model or classify):
+    elif identifier_method != 'remote' and (train_model or classify):
 
         print('Invalid recognizer method found. Please check your config file and choose:\n- lbp\n- eigen\n- fisher')
         return
@@ -228,7 +228,7 @@ def recognize():
                 class_time = time.time()
 
                 # Get label and confidence for captured image.
-                if mode == 'offline':
+                if mode == 'local':
                     label_id, confidence = classifier.classify(recognizer, face_image_gray)
                     label = recognizer.getLabelInfo(label_id)
                 else:

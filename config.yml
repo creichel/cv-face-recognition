@@ -1,12 +1,12 @@
-# Face detection and
+# General settings
 general:
     face_classifier:    'haar' # Choose: lbp, haar
     recognizer:         'lbp' # Choose: lbp, eigen, fisher
-    identifier_method:  'offline' # Choose: online or offline.
+    identifier_method:  'local' # Choose: local, remote
     capture_faces:      True
-    train_model:        True
+    train_model:        False
     classify:           True
-    resize_factor:    0.5
+    resize_factor:      0.5
 
 # Training
 training:
