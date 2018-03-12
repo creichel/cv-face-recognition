@@ -99,7 +99,7 @@ def recognize():
         print('Start capturing process...')
 
         # Ask for users name.
-        label = input("How is your name?\n")
+        label = input("What is your name?\n")
 
         ## Make folder.
         folder_hash = str(hash(time.time()))
@@ -229,9 +229,11 @@ def recognize():
 
                 # Get label and confidence for captured image.
                 if mode == 'local':
-                    label_id, confidence = classifier.classify(recognizer, face_image_gray)
-                    label = recognizer.getLabelInfo(label_id)
+
+                    label, confidence = classifier.classify(recognizer, face_image_gray)
+
                 else:
+
                     label, confidence = classifier_online.classify(server_url_classify, face_image)
 
                 # Stop timer.
